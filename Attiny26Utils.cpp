@@ -5,73 +5,73 @@
 namespace Attiny26 {
 
 void setTimer0Prescaler(Timer0PrescalerValue value) {
-  switch (value) {
-  case T0_PSV_1:
-    TCCR0 |= BV(CS00);
-    break;
-  case T0_PSV_8:
-    TCCR0 |= BV(CS01);
-    break;
-  case T0_PSV_64:
-    TCCR0 |= BV(CS01) | BV(CS00);
-    break;
-  case T0_PSV_256:
-    TCCR0 |= BV(CS02);
-    break;
-  case T0_PSV_1024:
-    TCCR0 |= BV(CS02) | BV(CS00);
-    break;
-  }
+    switch (value) {
+    case T0_PSV_1:
+        TCCR0 |= BV(CS00);
+        break;
+    case T0_PSV_8:
+        TCCR0 |= BV(CS01);
+        break;
+    case T0_PSV_64:
+        TCCR0 |= BV(CS01) | BV(CS00);
+        break;
+    case T0_PSV_256:
+        TCCR0 |= BV(CS02);
+        break;
+    case T0_PSV_1024:
+        TCCR0 |= BV(CS02) | BV(CS00);
+        break;
+    }
 }
 
 void setTimer1Prescaler(Timer1PrescalerValue value) {
-  switch (value) {
-  case T1_PSV_1:
-    TCCR0 |= BV(CS10);
-    break;
-  case T1_PSV_2:
-    TCCR0 |= BV(CS11);
-    break;
-  case T1_PSV_4:
-    TCCR0 |= BV(CS11) | BV(CS10);
-    break;
-  case T1_PSV_8:
-    TCCR0 |= BV(CS12);
-    break;
-  case T1_PSV_16:
-    TCCR0 |= BV(CS12) | BV(CS10);
-    break;
-  case T1_PSV_32:
-    TCCR1B |= BV(CS12) | BV(CS11);
-    break;
-  case T1_PSV_64:
-    TCCR1B |= BV(CS12) | BV(CS11) | BV(CS10);
-    break;
-  case T1_PSV_128:
-    TCCR1B |= BV(CS13);
-    break;
-  case T1_PSV_256:
-    TCCR1B |= BV(CS13) | BV(CS10);
-    break;
-  case T1_PSV_512:
-    TCCR1B |= BV(CS13) | BV(CS11);
-    break;
-  case T1_PSV_1024:
-    TCCR1B |= BV(CS13) | BV(CS11) | BV(CS10);
-    break;
-  case T1_PSV_2048:
-    TCCR1B |= BV(CS13) | BV(CS12);
-    break;
-  case T1_PSV_4096:
-    TCCR1B |= BV(CS13) | BV(CS12) | BV(CS10);
-    break;
-  case T1_PSV_8192:
-    TCCR1B|= BV(CS13) | BV(CS12) | BV(CS11);
-    break;
-  case T1_PSV_16384:
-    TCCR1B |= BV(CS13) | BV(CS12) | BV(CS11) | BV(CS10);
-    break;
-  }
+    switch (value) {
+    case T1_PSV_1:
+        TCCR0 |= BV(CS10);
+        break;
+    case T1_PSV_2:
+        TCCR0 |= BV(CS11);
+        break;
+    case T1_PSV_4:
+        TCCR0 |= BV(CS11) | BV(CS10);
+        break;
+    case T1_PSV_8:
+        TCCR0 |= BV(CS12);
+        break;
+    case T1_PSV_16:
+        TCCR0 |= BV(CS12) | BV(CS10);
+        break;
+    case T1_PSV_32:
+        TCCR1B |= BV(CS12) | BV(CS11);
+        break;
+    case T1_PSV_64:
+        TCCR1B |= BV(CS12) | BV(CS11) | BV(CS10);
+        break;
+    case T1_PSV_128:
+        TCCR1B |= BV(CS13);
+        break;
+    case T1_PSV_256:
+        TCCR1B |= BV(CS13) | BV(CS10);
+        break;
+    case T1_PSV_512:
+        TCCR1B |= BV(CS13) | BV(CS11);
+        break;
+    case T1_PSV_1024:
+        TCCR1B |= BV(CS13) | BV(CS11) | BV(CS10);
+        break;
+    case T1_PSV_2048:
+        TCCR1B |= BV(CS13) | BV(CS12);
+        break;
+    case T1_PSV_4096:
+        TCCR1B |= BV(CS13) | BV(CS12) | BV(CS10);
+        break;
+    case T1_PSV_8192:
+        TCCR1B|= BV(CS13) | BV(CS12) | BV(CS11);
+        break;
+    case T1_PSV_16384:
+        TCCR1B |= BV(CS13) | BV(CS12) | BV(CS11) | BV(CS10);
+        break;
+    }
 }
 
 /* TODO: Create utils

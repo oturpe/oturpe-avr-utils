@@ -10,21 +10,21 @@ namespace Attiny45 {
 
 /// Possible prescaler values for timers.
 enum TimerPrescalerValue {
-  PSV_1,
-  PSV_2,
-  PSV_4,
-  PSV_8,
-  PSV_16,
-  PSV_32,
-  PSV_64,
-  PSV_128,
-  PSV_256,
-  PSV_512,
-  PSV_1024,
-  PSV_2048,
-  PSV_4096,
-  PSV_8192,
-  PSV_16384
+    PSV_1,
+    PSV_2,
+    PSV_4,
+    PSV_8,
+    PSV_16,
+    PSV_32,
+    PSV_64,
+    PSV_128,
+    PSV_256,
+    PSV_512,
+    PSV_1024,
+    PSV_2048,
+    PSV_4096,
+    PSV_8192,
+    PSV_16384
 };
 
 /// Sets timer 0 prescaler to requested value.
@@ -34,7 +34,7 @@ enum TimerPrescalerValue {
 /// value is entered, prescaler is not set to any value.
 ///
 /// \param value
-///   Requested prescaler value
+///    Requested prescaler value
 void setTimer0Prescaler(TimerPrescalerValue value);
 
 /// Sets timer 1 prescaler to requested value.
@@ -43,7 +43,7 @@ void setTimer0Prescaler(TimerPrescalerValue value);
 /// Timer 1 support all listed prescaler values.
 ///
 /// \param value
-///   Requested prescaler value
+///    Requested prescaler value
 void setTimer1Prescaler(TimerPrescalerValue value);
 
 }
