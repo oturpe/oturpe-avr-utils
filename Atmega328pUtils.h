@@ -7,21 +7,21 @@ namespace Atmega328p {
 
 /// Possible prescaler values for timers.
 enum TimerPrescalerValue {
-  PSV_1,
-  PSV_8,
-  PSV_32,
-  PSV_64,
-  PSV_128,
-  PSV_256,
-  PSV_1024,
+    PSV_1,
+    PSV_8,
+    PSV_32,
+    PSV_64,
+    PSV_128,
+    PSV_256,
+    PSV_1024,
 };
 
 // Possible waveform generation modes for times.
 enum WaveformGenerationMode {
-  NORMAL,
-  PWM_PHASE_CORRECT,
-  PWM_FAST,
-  CTC
+    NORMAL,
+    PWM_PHASE_CORRECT,
+    PWM_FAST,
+    CTC
 };
 
 /// Initializes timer 0 by setting waveform generation mode and prescaler.
@@ -43,9 +43,11 @@ enum WaveformGenerationMode {
 ///
 /// \param topAtOcra
 ///    If TOP value should be set to OCRA register value
-void initializeTimer0(TimerPrescalerValue prescalerValue,
-                      WaveformGenerationMode mode,
-                      bool topAtOcra);
+void initializeTimer0(
+    TimerPrescalerValue prescalerValue,
+    WaveformGenerationMode mode,
+    bool topAtOcra
+);
 
 /// Initializes timer 2 by setting waveform generation mode and prescaler.
 ///
@@ -64,18 +66,20 @@ void initializeTimer0(TimerPrescalerValue prescalerValue,
 ///
 /// \param topAtOcra
 ///    If TOP value should be set to OCRA register value
-void initializeTimer2(TimerPrescalerValue prescalerValue,
-                      WaveformGenerationMode mode,
-                      bool topAtOcra);
+void initializeTimer2(
+    TimerPrescalerValue prescalerValue,
+    WaveformGenerationMode mode,
+    bool topAtOcra
+);
 
 // Possible voltage references
 enum VoltageReference {
-  // Aref pin
-  VREF_AREF,
-  // Vcc with external capacitor
-  VREF_VCC,
-  // Internal 1.1 V with external capacitor
-  VREF_INTERNAL_1_1V
+    // Aref pin
+    VREF_AREF,
+    // Vcc with external capacitor
+    VREF_VCC,
+    // Internal 1.1 V with external capacitor
+    VREF_INTERNAL_1_1V
 };
 
 // Sets analog voltage reference to requested type.
@@ -89,14 +93,21 @@ void setVoltageReference(VoltageReference reference);
 
 // Possible analog-to-digital converter prescaler values
 enum AdcPrescalerValue {
-  ADC_PSV_2,
-  ADC_PSV_4,
-  ADC_PSV_8,
-  ADC_PSV_16,
-  ADC_PSV_32,
-  ADC_PSV_64,
-  ADC_PSV_128
+    ADC_PSV_2,
+    ADC_PSV_4,
+    ADC_PSV_8,
+    ADC_PSV_16,
+    ADC_PSV_32,
+    ADC_PSV_64,
+    ADC_PSV_128
 };
+
+/// \brief
+///    Sets adjustment of adc results to right (default) or left.
+///
+/// \param leftAdjust
+///    If results are left adjusted.
+void leftAdjustAdcResults(bool leftAdjust);
 
 // Sets analog-to-digital converter prescaler value.
 //

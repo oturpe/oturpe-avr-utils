@@ -4,9 +4,11 @@
 
 namespace Atmega328p {
 
-void initializeTimer0(TimerPrescalerValue prescalerValue,
-                      WaveformGenerationMode mode,
-                      bool topAtOcra) {
+void initializeTimer0(
+    TimerPrescalerValue prescalerValue,
+    WaveformGenerationMode mode,
+    bool topAtOcra
+) {
     switch (prescalerValue) {
     case PSV_1:
         TCCR0B |= BV(CS00);
@@ -47,9 +49,11 @@ void initializeTimer0(TimerPrescalerValue prescalerValue,
     }
 }
 
-void initializeTimer2(TimerPrescalerValue prescalerValue,
-                      WaveformGenerationMode mode,
-                      bool topAtOcra) {
+void initializeTimer2(
+    TimerPrescalerValue prescalerValue,
+    WaveformGenerationMode mode,
+    bool topAtOcra
+) {
     switch (prescalerValue) {
         case PSV_1:
         TCCR2B |= BV(CS20);
@@ -97,43 +101,51 @@ void initializeTimer2(TimerPrescalerValue prescalerValue,
 }
 
 void setVoltageReference(VoltageReference reference) {
-  switch(reference) {
-  case VREF_AREF:
-    // The default, nothing to do
-    break;
-  case VREF_VCC:
-    ADMUX |= BV(REFS0);
-    break;
-  case VREF_INTERNAL_1_1V:
-    ADMUX |= BV(REFS1) | BV(REFS0);
-    break;
+    switch(reference) {
+    case VREF_AREF:
+        // The default, nothing to do
+        break;
+    case VREF_VCC:
+        ADMUX |= BV(REFS0);
+        break;
+    case VREF_INTERNAL_1_1V:
+        ADMUX |= BV(REFS1) | BV(REFS0);
+        break;
+    }
+}
+
+void leftAdjustAdcResults(bool leftAdjust) {
+    if(leftAdjust) {
+        ADMUX |= BV(ADLAR);
+    } else {
+        ADMUX &= ~BV(ADLAR);
   }
 }
 
 void setAdcPrescalerValue(AdcPrescalerValue value) {
-  switch(value) {
-  case ADC_PSV_2:
-    // The default, nothing to do
-    break;
-  case ADC_PSV_4:
-    ADCSRA |= BV(ADPS1);
-    break;
-  case ADC_PSV_8:
-    ADCSRA |= BV(ADPS1) | BV(ADPS0);
-    break;
-  case ADC_PSV_16:
-    ADCSRA |= BV(ADPS2);
-    break;
-  case ADC_PSV_32:
-    ADCSRA |= BV(ADPS2) | BV(ADPS0);
-    break;
-  case ADC_PSV_64:
-    ADCSRA |= BV(ADPS2) | BV(ADPS1);
-    break;
-  case ADC_PSV_128:
-    ADCSRA |= BV(ADPS2) | BV(ADPS1) | BV(ADPS0);
-    break;
-  }
+    switch(value) {
+    case ADC_PSV_2:
+        // The default, nothing to do
+        break;
+    case ADC_PSV_4:
+        ADCSRA |= BV(ADPS1);
+        break;
+    case ADC_PSV_8:
+        ADCSRA |= BV(ADPS1) | BV(ADPS0);
+        break;
+    case ADC_PSV_16:
+        ADCSRA |= BV(ADPS2);
+        break;
+    case ADC_PSV_32:
+        ADCSRA |= BV(ADPS2) | BV(ADPS0);
+        break;
+    case ADC_PSV_64:
+        ADCSRA |= BV(ADPS2) | BV(ADPS1);
+        break;
+    case ADC_PSV_128:
+        ADCSRA |= BV(ADPS2) | BV(ADPS1) | BV(ADPS0);
+        break;
+    }
 }
 
 } // namespace
