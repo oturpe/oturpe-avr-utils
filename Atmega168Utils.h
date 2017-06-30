@@ -1,4 +1,6 @@
-// Helpers for working with Atmega328p.
+// Helpers for working with Atmega168p.
+//
+// Obsoleted by more generic Atmega8Utils.h
 
 // Cleaner setting of bits
 #define BV(x) (1<<x)
